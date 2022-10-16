@@ -1,0 +1,541 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Mon Apr 29 21:44:55 2019
+# Process ID: 1608
+# Current directory: E:/new/class/MiniMIPS32/MiniMIPS32.runs/synth_1
+# Command line: vivado.exe -log MiniMIPS32_SYS.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MiniMIPS32_SYS.tcl
+# Log file: E:/new/class/MiniMIPS32/MiniMIPS32.runs/synth_1/MiniMIPS32_SYS.vds
+# Journal file: E:/new/class/MiniMIPS32/MiniMIPS32.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source MiniMIPS32_SYS.tcl -notrace
+Command: synth_design -top MiniMIPS32_SYS -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 988 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 366.441 ; gain = 101.926
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'MiniMIPS32_SYS' [E:/new/class/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/MiniMIPS32_SYS.v:3]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [E:/new/class/MiniMIPS32/MiniMIPS32.runs/synth_1/.Xil/Vivado-1608-LAPTOP-GDGGKCGC/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'clk_wiz_0' (1#1) [E:/new/class/MiniMIPS32/MiniMIPS32.runs/synth_1/.Xil/Vivado-1608-LAPTOP-GDGGKCGC/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'inst_rom' [E:/new/class/MiniMIPS32/MiniMIPS32.runs/synth_1/.Xil/Vivado-1608-LAPTOP-GDGGKCGC/realtime/inst_rom_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'inst_rom' (2#1) [E:/new/class/MiniMIPS32/MiniMIPS32.runs/synth_1/.Xil/Vivado-1608-LAPTOP-GDGGKCGC/realtime/inst_rom_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'MiniMIPS32' [E:/new/class/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/MiniMIPS32.v:3]
+INFO: [Synth 8-638] synthesizing module 'if_stage' [E:/new/class/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/if_stage.v:3]
+INFO: [Synth 8-256] done synthesizing module 'if_stage' (3#1) [E:/new/class/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/if_stage.v:3]
+INFO: [Synth 8-638] synthesizing module 'ifid_reg' [E:/new/class/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/ifid_reg.v:3]
+INFO: [Synth 8-256] done synthesizing module 'ifid_reg' (4#1) [E:/new/class/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/ifid_reg.v:3]
+INFO: [Synth 8-638] synthesizing module 'id_stage' [E:/new/class/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/id_stage.v:3]
+INFO: [Synth 8-256] done synthesizing module 'id_stage' (5#1) [E:/new/class/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/id_stage.v:3]
+INFO: [Synth 8-638] synthesizing module 'regfile' [E:/new/class/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/regfile.v:3]
+INFO: [Synth 8-256] done synthesizing module 'regfile' (6#1) [E:/new/class/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/regfile.v:3]
+INFO: [Synth 8-638] synthesizing module 'idexe_reg' [E:/new/class/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/idexe_reg.v:3]
+INFO: [Synth 8-256] done synthesizing module 'idexe_reg' (7#1) [E:/new/class/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/idexe_reg.v:3]
+INFO: [Synth 8-638] synthesizing module 'exe_stage' [E:/new/class/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/exe_stage.v:3]
+INFO: [Synth 8-256] done synthesizing module 'exe_stage' (8#1) [E:/new/class/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/exe_stage.v:3]
+INFO: [Synth 8-638] synthesizing module 'exemem_reg' [E:/new/class/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/exemem_reg.v:3]
+INFO: [Synth 8-256] done synthesizing module 'exemem_reg' (9#1) [E:/new/class/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/exemem_reg.v:3]
+INFO: [Synth 8-638] synthesizing module 'mem_stage' [E:/new/class/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/mem_stage.v:3]
+INFO: [Synth 8-256] done synthesizing module 'mem_stage' (10#1) [E:/new/class/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/mem_stage.v:3]
+INFO: [Synth 8-638] synthesizing module 'memwb_reg' [E:/new/class/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/memwb_reg.v:3]
+INFO: [Synth 8-256] done synthesizing module 'memwb_reg' (11#1) [E:/new/class/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/memwb_reg.v:3]
+INFO: [Synth 8-638] synthesizing module 'wb_stage' [E:/new/class/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/wb_stage.v:3]
+INFO: [Synth 8-256] done synthesizing module 'wb_stage' (12#1) [E:/new/class/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/wb_stage.v:3]
+INFO: [Synth 8-256] done synthesizing module 'MiniMIPS32' (13#1) [E:/new/class/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/MiniMIPS32.v:3]
+INFO: [Synth 8-256] done synthesizing module 'MiniMIPS32_SYS' (14#1) [E:/new/class/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/MiniMIPS32_SYS.v:3]
+WARNING: [Synth 8-3331] design mem_stage has unconnected port mem_aluop_i[7]
+WARNING: [Synth 8-3331] design mem_stage has unconnected port mem_aluop_i[6]
+WARNING: [Synth 8-3331] design mem_stage has unconnected port mem_aluop_i[5]
+WARNING: [Synth 8-3331] design mem_stage has unconnected port mem_aluop_i[4]
+WARNING: [Synth 8-3331] design mem_stage has unconnected port mem_aluop_i[3]
+WARNING: [Synth 8-3331] design mem_stage has unconnected port mem_aluop_i[2]
+WARNING: [Synth 8-3331] design mem_stage has unconnected port mem_aluop_i[1]
+WARNING: [Synth 8-3331] design mem_stage has unconnected port mem_aluop_i[0]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[31]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[30]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[29]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[28]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[27]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[26]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[25]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[24]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[23]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[22]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[21]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[20]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[19]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[18]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[17]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[16]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[15]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[14]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[13]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[12]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[11]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[10]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[9]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[8]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[7]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[6]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[5]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[4]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[3]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[2]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[1]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_pc_i[0]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_inst_i[31]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_inst_i[30]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_inst_i[18]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_inst_i[17]
+WARNING: [Synth 8-3331] design id_stage has unconnected port id_inst_i[16]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 418.289 ; gain = 153.773
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 418.289 ; gain = 153.773
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [E:/new/class/MiniMIPS32/MiniMIPS32.runs/synth_1/.Xil/Vivado-1608-LAPTOP-GDGGKCGC/dcp5/clk_wiz_0_in_context.xdc] for cell 'clocking'
+Finished Parsing XDC File [E:/new/class/MiniMIPS32/MiniMIPS32.runs/synth_1/.Xil/Vivado-1608-LAPTOP-GDGGKCGC/dcp5/clk_wiz_0_in_context.xdc] for cell 'clocking'
+Parsing XDC File [E:/new/class/MiniMIPS32/MiniMIPS32.runs/synth_1/.Xil/Vivado-1608-LAPTOP-GDGGKCGC/dcp7/inst_rom_in_context.xdc] for cell 'inst_rom0'
+Finished Parsing XDC File [E:/new/class/MiniMIPS32/MiniMIPS32.runs/synth_1/.Xil/Vivado-1608-LAPTOP-GDGGKCGC/dcp7/inst_rom_in_context.xdc] for cell 'inst_rom0'
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 769.836 ; gain = 0.297
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 769.836 ; gain = 505.320
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 769.836 ; gain = 505.320
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for sys_clk_100M. (constraint file  E:/new/class/MiniMIPS32/MiniMIPS32.runs/synth_1/.Xil/Vivado-1608-LAPTOP-GDGGKCGC/dcp5/clk_wiz_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_clk_100M. (constraint file  E:/new/class/MiniMIPS32/MiniMIPS32.runs/synth_1/.Xil/Vivado-1608-LAPTOP-GDGGKCGC/dcp5/clk_wiz_0_in_context.xdc, line 4).
+Applied set_property DONT_TOUCH = true for clocking. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst_rom0. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 769.836 ; gain = 505.320
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6014] Unused sequential element pc_reg was removed.  [E:/new/class/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/if_stage.v:13]
+INFO: [Synth 8-5546] ROM "regs_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[3]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[4]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[5]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[6]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[7]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[8]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[9]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[10]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[11]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[12]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[13]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[14]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[15]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[16]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[17]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[18]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[19]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[20]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[21]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[22]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[23]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[24]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[25]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[26]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[27]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[28]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[29]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[30]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "regs_reg[31]" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 769.836 ; gain = 505.320
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 37    
+	                8 Bit    Registers := 2     
+	                5 Bit    Registers := 3     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 16    
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 32    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module if_stage 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module ifid_reg 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module id_stage 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   2 Input      5 Bit        Muxes := 3     
+Module regfile 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 32    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 32    
+Module idexe_reg 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
+	                8 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module exe_stage 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+Module exemem_reg 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module mem_stage 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+Module memwb_reg 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module wb_stage 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6014] Unused sequential element minimips32/ifid_reg0/id_pc_reg was removed.  [E:/new/class/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/ifid_reg.v:17]
+WARNING: [Synth 8-6014] Unused sequential element minimips32/exemem_reg0/mem_aluop_reg was removed.  [E:/new/class/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/exemem_reg.v:22]
+WARNING: [Synth 8-6014] Unused sequential element minimips32/if_stage0/pc_reg was removed.  [E:/new/class/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/if_stage.v:13]
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][31]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][30]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][29]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][28]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][27]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][26]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][25]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][24]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][23]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][22]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][21]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][20]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][19]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][18]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][17]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][16]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][15]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][14]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][13]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][12]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][11]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][10]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][9]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][8]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][7]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][6]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][5]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][4]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][3]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][2]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][1]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[0][0]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][31]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][30]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][29]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][28]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][27]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][26]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][25]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][24]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][23]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][22]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][21]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][20]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][19]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][18]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][17]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][16]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][15]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][14]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][13]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][12]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][11]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][10]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][9]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][8]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][7]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][6]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][5]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][4]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][3]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][2]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][1]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[1][0]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][31]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][30]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][29]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][28]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][27]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][26]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][25]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][24]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][23]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][22]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][21]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][20]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][19]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][18]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][17]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][16]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][15]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][14]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][13]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][12]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][11]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][10]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][9]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][8]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][7]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][6]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][5]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][4]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][3]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][2]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][1]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[2][0]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[3][31]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[3][30]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[3][29]) is unused and will be removed from module MiniMIPS32_SYS.
+WARNING: [Synth 8-3332] Sequential element (minimips32/regfile0/regs_reg[3][28]) is unused and will be removed from module MiniMIPS32_SYS.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 769.836 ; gain = 505.320
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'clocking/clk_out1' to pin 'clocking/bbstub_clk_out1/O'
+INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 769.836 ; gain = 505.320
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 769.836 ; gain = 505.320
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 773.875 ; gain = 509.359
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 773.875 ; gain = 509.359
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 773.875 ; gain = 509.359
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 773.875 ; gain = 509.359
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 773.875 ; gain = 509.359
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 773.875 ; gain = 509.359
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 773.875 ; gain = 509.359
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_wiz_0     |         1|
+|2     |inst_rom      |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |clk_wiz_0 |     1|
+|2     |inst_rom  |     1|
+|3     |CARRY4    |     3|
+|4     |LUT1      |     2|
+|5     |LUT2      |    11|
+|6     |FDRE      |    12|
+|7     |IBUF      |     1|
++------+----------+------+
+
+Report Instance Areas: 
++------+--------------+-----------+------+
+|      |Instance      |Module     |Cells |
++------+--------------+-----------+------+
+|1     |top           |           |    62|
+|2     |  minimips32  |MiniMIPS32 |    28|
+|3     |    if_stage0 |if_stage   |    28|
++------+--------------+-----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 773.875 ; gain = 509.359
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1206 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:30 . Memory (MB): peak = 773.875 ; gain = 157.813
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 773.875 ; gain = 509.359
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+74 Infos, 149 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 775.066 ; gain = 520.965
+INFO: [Common 17-1381] The checkpoint 'E:/new/class/MiniMIPS32/MiniMIPS32.runs/synth_1/MiniMIPS32_SYS.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file MiniMIPS32_SYS_utilization_synth.rpt -pb MiniMIPS32_SYS_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 775.066 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 29 21:46:05 2019...
