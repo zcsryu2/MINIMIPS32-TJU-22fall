@@ -37,7 +37,8 @@ module exe_stage (
            (exe_aluop_i == `MINIMIPS32_ORI) ? (exe_src1_i | exe_src2_i) : `ZERO_WORD;
     assign shiftres = (exe_aluop_i == `MINIMIPS32_SLL) ? (exe_src2_i << exe_src1_i) : `ZERO_WORD;
     assign arithres = (exe_aluop_i == `MINIMIPS32_ADD) ? (exe_src1_i + exe_src2_i) :
-            (exe_aluop_i == `MINIMIPS32_SUBU) ? (exe_src1_i + (~exe_src2_i) + 1) : `ZERO_WORD;
+            (exe_aluop_i == `MINIMIPS32_SUBU) ? (exe_src1_i + (~exe_src2_i) + 1) :
+            (exe_aluop_i == `MINIMIPS32_SUBU) ? (($signed(exe_src1_i) < $signed(exe_src2_i)) ? 32'b1 : 32'b0) : `ZERO_WORD;
 
     assign hi_t = hi_i;
     assign lo_t = lo_i;
