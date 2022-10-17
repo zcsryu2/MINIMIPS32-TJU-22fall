@@ -14,7 +14,7 @@ module ifid_reg (
 	always @(posedge cpu_clk_50M) begin
 	    // 复位的时候将送至译码阶段的信息清0
 		if (cpu_rst_n == `RST_ENABLE) begin
-			id_pc 	<= `PC_INIT;
+			id_pc 	<= `PC_INIT&32'h1FFFFFFF;
 		end
 		// 将来自取指阶段的信息寄存并送至译码阶段
 		else begin

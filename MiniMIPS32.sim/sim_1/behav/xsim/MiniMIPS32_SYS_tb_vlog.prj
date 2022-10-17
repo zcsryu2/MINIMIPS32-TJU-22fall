@@ -1,0 +1,25 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../MiniMIPS32.srcs/sources_1/ip/clkdiv" \
+"../../../../MiniMIPS32.srcs/sources_1/ip/inst_rom/sim/inst_rom.v" \
+"../../../../MiniMIPS32.srcs/sources_1/ip/clkdiv/clkdiv_clk_wiz.v" \
+"../../../../MiniMIPS32.srcs/sources_1/ip/clkdiv/clkdiv.v" \
+"../../../../MiniMIPS32.srcs/sources_1/new/MiniMIPS32.v" \
+"../../../../MiniMIPS32.srcs/sources_1/new/MiniMIPS32_SYS.v" \
+"../../../../MiniMIPS32.srcs/sources_1/new/Mux2.v" \
+"../../../../MiniMIPS32.srcs/sources_1/new/exe_stage.v" \
+"../../../../MiniMIPS32.srcs/sources_1/new/exemem_reg.v" \
+"../../../../MiniMIPS32.srcs/sources_1/new/id_stage.v" \
+"../../../../MiniMIPS32.srcs/sources_1/new/idexe_reg.v" \
+"../../../../MiniMIPS32.srcs/sources_1/new/if_stage.v" \
+"../../../../MiniMIPS32.srcs/sources_1/new/ifid_reg.v" \
+"../../../../MiniMIPS32.srcs/sources_1/new/mem_stage.v" \
+"../../../../MiniMIPS32.srcs/sources_1/new/memwb_reg.v" \
+"../../../../MiniMIPS32.srcs/sources_1/new/regfile.v" \
+"../../../../MiniMIPS32.srcs/sources_1/new/wb_stage.v" \
+"../../../../MiniMIPS32.srcs/sim_1/new/MiniMIPS32_SYS_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
