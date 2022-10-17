@@ -17,15 +17,16 @@ module id_stage(
     output wire [`ALUOP_BUS    ]    id_aluop_o,
     output wire [`REG_ADDR_BUS ]    id_wa_o,
     output wire                     id_wreg_o,
+    output wire                     id_whilo_o,
 
     // 送至执行阶段的源操作数1、源操作数2
     output wire [`REG_BUS      ]    id_src1_o,
     output wire [`REG_BUS      ]    id_src2_o,
       
     // 送至读通用寄存器堆端口的使能和地址
-    output wire                     rreg1,
+    // output wire                     rreg1,
     output wire [`REG_ADDR_BUS ]    ra1,
-    output wire                     rreg2,
+    // output wire                     rreg2,
     output wire [`REG_ADDR_BUS ]    ra2
     );
     
@@ -44,30 +45,40 @@ module id_stage(
     /*-------------------- 第一级译码逻辑：确定当前需要译码的指令 --------------------*/
     wire inst_reg  = ~|op;
     wire inst_and  = inst_reg& func[5]&~func[4]&~func[3]& func[2]&~func[1]&~func[0];
+    wire inst_add  = inst_reg& func[5]&~func[4]&~func[3]&~func[2]&~func[1]&~func[0];
+    wire inst_subu = inst_reg& func[5]&~func[4]&~func[3]&~func[2]& func[1]& func[0];
+    wire inst_slt  = inst_reg& func[5]&~func[4]& func[3]&~func[2]& func[1]&~func[0];
+    wire inst_mult = inst_reg&~func[5]& func[4]& func[3]&~func[2]&~func[1]&~func[0];
+    wire inst_mfhi = inst_reg&~func[5]& func[4]&~func[3]&~func[2]&~func[1]&~func[0];
+    wire inst_mflo = inst_reg&~func[5]& func[4]&~func[3]&~func[2]& func[1]&~func[0];
+    wire inst_sll  = inst_reg&~func[5]&~func[4]&~func[3]&~func[2]&~func[1]&~func[0];
     /*------------------------------------------------------------------------------*/
 
     /*-------------------- 第二级译码逻辑：生成具体控制信号 --------------------*/
     // 操作类型alutype
-    assign id_alutype_o[2] = 1'b0;
-    assign id_alutype_o[1] = inst_and;
-    assign id_alutype_o[0] = 1'b0;
+    assign id_alutype_o[2] = inst_sll;
+    assign id_alutype_o[1] = inst_and|inst_mfhi|inst_mflo;
+    assign id_alutype_o[0] = inst_add|inst_subu|inst_slt|inst_mfhi|inst_mflo;
 
     // 内部操作码aluop
     assign id_aluop_o[7]   = 1'b0;
     assign id_aluop_o[6]   = 1'b0;
-    assign id_aluop_o[5]   = 1'b0;
-    assign id_aluop_o[4]   = inst_and;
-    assign id_aluop_o[3]   = inst_and;
-    assign id_aluop_o[2]   = inst_and;
-    assign id_aluop_o[1]   = 1'b0;
-    assign id_aluop_o[0]   = 1'b0;
+    assign id_aluop_o[5]   = inst_slt;
+    assign id_aluop_o[4]   = inst_and|inst_add|inst_subu|inst_sll|inst_mult;
+    assign id_aluop_o[3]   = inst_and|inst_add|inst_subu|inst_mfhi|inst_mflo;
+    assign id_aluop_o[2]   = inst_and|inst_slt|inst_mfhi|inst_mflo|inst_mult;
+    assign id_aluop_o[1]   = inst_subu|inst_slt;
+    assign id_aluop_o[0]   = inst_subu|inst_sll|inst_mflo;
 
     // 写通用寄存器使能信号
-    assign id_wreg_o       = inst_and;
+    assign id_wreg_o       = inst_and|inst_add|inst_subu|inst_slt|inst_mfhi|inst_mflo|inst_sll;
+    assign id_whilo_o      = inst_mult;
+
+    wire shift             = inst_sll;
     // 读通用寄存器堆端口1使能信号
-    assign rreg1 = inst_and;
-    // 读通用寄存器堆读端口2使能信号
-    assign rreg2 = inst_and;
+    // assign rreg1 = inst_and;
+    // // 读通用寄存器堆读端口2使能信号
+    // assign rreg2 = inst_and;
     /*------------------------------------------------------------------------------*/
 
     // 读通用寄存器堆端口1的地址为rs字段，读端口2的地址为rt字段
@@ -78,9 +89,9 @@ module id_stage(
     assign id_wa_o      = rd;
 
     // 获得源操作数1。如果shift信号有效，则源操作数1为移位位数；否则为从读通用寄存器堆端口1获得的数据
-    assign id_src1_o = (rreg1 == `READ_ENABLE   ) ? rd1 : `ZERO_WORD;
-
+    // assign id_src1_o = (shift  == `SHIFT_ENABLE   ) ? {27'b0,sa} : rd1;
+    Mux2 shiftmux(shift,rd1,{27'b0,sa},id_src1_o);
     // 获得源操作数2。如果immsel信号有效，则源操作数1为立即数；否则为从读通用寄存器堆端口2获得的数据
-    assign id_src2_o = (rreg2 == `READ_ENABLE   ) ? rd2 : `ZERO_WORD;                     
+    assign id_src2_o =  rd2 ;                     
 
 endmodule

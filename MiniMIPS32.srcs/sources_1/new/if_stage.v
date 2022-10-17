@@ -28,6 +28,6 @@ module if_stage (
     end
     
     // TODO：指令存储器的访问地址没有根据其所处范围进行进行固定地址映射，需要修改!!!
-    assign iaddr = (ice == `CHIP_DISABLE) ? `PC_INIT : pc;    // 获得访问指令存储器的地址
-
+    wire [`INST_ADDR_BUS] tmp= (ice == `CHIP_DISABLE) ? `PC_INIT : pc;    // 获得访问指令存储器的地址
+    assign iaddr = tmp&32'h1FFFFFFF;
 endmodule
