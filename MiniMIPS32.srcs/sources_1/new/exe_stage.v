@@ -4,22 +4,22 @@ module exe_stage (
 
     // 从译码阶段获得的信息
     input  wire [`ALUTYPE_BUS	] 	exe_alutype_i,
-    input  wire [`ALUOP_BUS	] 	exe_aluop_i,
-    input  wire [`REG_BUS 	] 	exe_src1_i,
-    input  wire [`REG_BUS 	] 	exe_src2_i,
+    input  wire [`ALUOP_BUS	] 	    exe_aluop_i,
+    input  wire [`REG_BUS 	] 	    exe_src1_i,
+    input  wire [`REG_BUS 	] 	    exe_src2_i,
     input  wire [`REG_ADDR_BUS 	] 	exe_wa_i,
-    input  wire 			exe_wreg_i,
-    input  wire                          exe_whilo_i,
+    input  wire 			        exe_wreg_i,
+    input  wire                     exe_whilo_i,
 
     input  wire [`REG_BUS 	]       hi_i,
     input  wire [`REG_BUS 	]       lo_i,
 
     // 送至访存阶段的信息
-    output wire [`ALUOP_BUS	] 	exe_aluop_o,
+    output wire [`ALUOP_BUS	] 	    exe_aluop_o,
     output wire [`REG_ADDR_BUS 	] 	exe_wa_o,
-    output wire 			exe_wreg_o,
-    output wire [`REG_BUS 	] 	exe_wd_o,
-    output wire [`DOUBLE_REG_BUS]       exe_hilo_o
+    output wire 			        exe_wreg_o,
+    output wire [`REG_BUS 	] 	    exe_wd_o,
+    output wire [`DOUBLE_REG_BUS]   exe_hilo_o
     );
 
     // 直接传到下一阶段
@@ -34,14 +34,17 @@ module exe_stage (
     
     // 根据内部操作码aluop进行逻辑运算
     assign logicres = (exe_aluop_i == `MINIMIPS32_AND )  ? (exe_src1_i & exe_src2_i) :
-           (exe_aluop_i == `MINIMIPS32_ORI) ? (exe_src1_i | exe_src2_i) : `ZERO_WORD;
+           (exe_aluop_i == `MINIMIPS32_ORI) ? (exe_src1_i | exe_src2_i) :
+           (exe_aluop_i == `MINIMIPS32_LUI) ? exe_src2_i : `ZERO_WORD;
            
     assign shiftres = (exe_aluop_i == `MINIMIPS32_SLL) ? (exe_src2_i << exe_src1_i) : `ZERO_WORD;
     assign arithres = (exe_aluop_i == `MINIMIPS32_ADD) ? (exe_src1_i + exe_src2_i) :
             (exe_aluop_i == `MINIMIPS32_SUBU) ? (exe_src1_i + (~exe_src2_i) + 1) :
             (exe_aluop_i == `MINIMIPS32_SLT) ? (($signed(exe_src1_i) < $signed(exe_src2_i)) ? 32'b1 : 32'b0) :
             (exe_aluop_i == `MINIMIPS32_ADDIU) ? (exe_src1_i + exe_src2_i) :
-            `ZERO_WORD;
+            (exe_aluop_i == `MINIMIPS32_SLTIU) ? ((exe_src1_i < exe_src2_i) ? 32'b1 : 32'b0) :
+            (exe_aluop_i == `MINIMIPS32_LB) ? (exe_src1_i + exe_src2_i) : 
+            (exe_aluop_i == `MINIMIPS32_LW) ? (exe_src1_i + exe_src2_i) : `ZERO_WORD;
 
     assign hi_t = hi_i;
     assign lo_t = lo_i;

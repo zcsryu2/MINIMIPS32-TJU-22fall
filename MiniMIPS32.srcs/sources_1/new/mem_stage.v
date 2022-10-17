@@ -14,8 +14,8 @@ module mem_stage (
     output wire [`REG_ADDR_BUS  ]       mem_wa_o,
     output wire                         mem_wreg_o,
     output wire [`REG_BUS       ]       mem_dreg_o,
-    output  wire                         mem_whilo_o,
-    output  wire [`DOUBLE_REG_BUS]       mem_hilo_o
+    output wire                         mem_whilo_o,
+    output wire [`DOUBLE_REG_BUS]       mem_hilo_o
     );
 
     // 如果当前不是访存指令，则只需要把从执行阶段获得的信息直接输出
