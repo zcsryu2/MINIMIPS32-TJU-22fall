@@ -94,7 +94,8 @@ module MiniMIPS32(
         .ra1(ra1), .ra2(ra2), 
         .id_aluop_o(id_aluop_o), .id_alutype_o(id_alutype_o),
         .id_src1_o(id_src1_o), .id_src2_o(id_src2_o),
-        .id_wa_o(id_wa_o), .id_wreg_o(id_wreg_o)
+        .id_wa_o(id_wa_o), .id_wreg_o(id_wreg_o),
+        .if_whilo_o(id_whilo_o)
     );
     
     regfile regfile0(.cpu_clk_50M(cpu_clk_50M), .cpu_rst_n(cpu_rst_n),
@@ -107,9 +108,11 @@ module MiniMIPS32(
         .id_alutype(id_alutype_o), .id_aluop(id_aluop_o),
         .id_src1(id_src1_o), .id_src2(id_src2_o),
         .id_wa(id_wa_o), .id_wreg(id_wreg_o),
+        .id_whilo(id_whilo_o),
         .exe_alutype(exe_alutype_i), .exe_aluop(exe_aluop_i),
         .exe_src1(exe_src1_i), .exe_src2(exe_src2_i), 
-        .exe_wa(exe_wa_i), .exe_wreg(exe_wreg_i)
+        .exe_wa(exe_wa_i), .exe_wreg(exe_wreg_i),
+        .exe_whilo(exe_whilo_i)
     );
     
     exe_stage exe_stage0(
