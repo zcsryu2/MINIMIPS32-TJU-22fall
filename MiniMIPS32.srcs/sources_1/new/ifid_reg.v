@@ -18,7 +18,7 @@ module ifid_reg (
 		end
 		// 将来自取指阶段的信息寄存并送至译码阶段
 		else begin
-			id_pc	<= if_pc;		
+			id_pc	<= if_pc&32'h1FFFFFFF;		
 		end
 	end
 

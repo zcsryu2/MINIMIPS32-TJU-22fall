@@ -19,16 +19,19 @@ module exe_stage (
     output wire [`REG_ADDR_BUS 	] 	exe_wa_o,
     output wire 			        exe_wreg_o,
     output wire [`REG_BUS 	] 	    exe_wd_o,
+    output wire                     exe_whilo_o,
     output wire [`DOUBLE_REG_BUS]   exe_hilo_o
     );
 
     // 直接传到下一阶段
     assign exe_aluop_o = exe_aluop_i;
-    
+    assign exe_whilo_o = exe_whilo_i;
+
     wire [`REG_BUS       ]      logicres;       // 保存逻辑运算的结果
     wire [`REG_BUS       ]      shiftres;       // 保存移位运算的结果
     wire [`REG_BUS       ]      arithres;       // 保存算术操作的结果
     wire [`DOUBLE_REG_BUS]      mulres;         // 保存乘法操作的结果
+    wire [`REG_BUS       ]      moveres; 
     wire [`REG_BUS       ]      hi_t;
     wire [`REG_BUS       ]      lo_t;
     
