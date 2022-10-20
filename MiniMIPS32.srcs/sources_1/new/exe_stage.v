@@ -10,6 +10,8 @@ module exe_stage (
     input  wire [`REG_ADDR_BUS 	] 	exe_wa_i,
     input  wire 			        exe_wreg_i,
     input  wire                     exe_whilo_i,
+    input  wire                     exe_mreg_i,
+    input  wire [`REG_BUS   ]       exe_din_i,
 
     input  wire [`REG_BUS 	]       hi_i,
     input  wire [`REG_BUS 	]       lo_i,
@@ -20,12 +22,16 @@ module exe_stage (
     output wire 			        exe_wreg_o,
     output wire [`REG_BUS 	] 	    exe_wd_o,
     output wire                     exe_whilo_o,
-    output wire [`DOUBLE_REG_BUS]   exe_hilo_o
+    output wire [`DOUBLE_REG_BUS]   exe_hilo_o,
+    output wire                     exe_mreg_o,
+    output wire [`REG_BUS   ]       exe_din_o
     );
 
     // 直接传到下一阶段
     assign exe_aluop_o = exe_aluop_i;
     assign exe_whilo_o = exe_whilo_i;
+    assign exe_mreg_o  = exe_mreg_i;
+    assign exe_din_o   = exe_din_i;
 
     wire [`REG_BUS       ]      logicres;       // 保存逻辑运算的结果
     wire [`REG_BUS       ]      shiftres;       // 保存移位运算的结果
