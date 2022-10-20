@@ -1,0 +1,39 @@
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: E:/vivado/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto bb1d9b6b857a46b28863b191d55162ea --incr --debug typical --relax --mt 2 -L blk_mem_gen_v8_4_4 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot MiniMIPS32_SYS_tb_behav xil_defaultlib.MiniMIPS32_SYS_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUFDS
+Compiling module unisims_ver.MMCME2_ADV(CLKIN1_PERIOD=5.0,CLK...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clkdiv_clk_wiz
+Compiling module xil_defaultlib.clkdiv
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="kin...
+Compiling module xil_defaultlib.inst_rom
+Compiling module xil_defaultlib.if_stage
+Compiling module xil_defaultlib.ifid_reg
+Compiling module xil_defaultlib.id_stage
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.idexe_reg
+Compiling module xil_defaultlib.exe_stage
+Compiling module xil_defaultlib.exemem_reg
+Compiling module xil_defaultlib.mem_stage
+Compiling module xil_defaultlib.memwb_reg
+Compiling module xil_defaultlib.wb_stage
+Compiling module xil_defaultlib.hilo
+Compiling module xil_defaultlib.MiniMIPS32
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="kin...
+Compiling module xil_defaultlib.data_ram
+Compiling module xil_defaultlib.MiniMIPS32_SYS
+Compiling module xil_defaultlib.MiniMIPS32_SYS_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot MiniMIPS32_SYS_tb_behav

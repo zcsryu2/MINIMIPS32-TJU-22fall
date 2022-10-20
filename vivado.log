@@ -1,0 +1,159 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Thu Oct 20 11:29:04 2022
+# Process ID: 18916
+# Current directory: D:/projects/vivado/MiniMIPS32
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2080 D:\projects\vivado\MiniMIPS32\MiniMIPS32.xpr
+# Log file: D:/projects/vivado/MiniMIPS32/vivado.log
+# Journal file: D:/projects/vivado/MiniMIPS32\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/projects/vivado/MiniMIPS32/MiniMIPS32.xpr
+INFO: [Project 1-313] Project file moved from 'E:/mips_pro/computer-organization-and-design' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/vivado/Vivado/2019.2/data/ip'.
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:06 . Memory (MB): peak = 861.473 ; gain = 173.504
+update_compile_order -fileset sources_1
+generate_target Simulation [get_files D:/projects/vivado/MiniMIPS32/MiniMIPS32.srcs/sources_1/ip/inst_rom/inst_rom.xci]
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'inst_rom'...
+export_ip_user_files -of_objects [get_files D:/projects/vivado/MiniMIPS32/MiniMIPS32.srcs/sources_1/ip/inst_rom/inst_rom.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files D:/projects/vivado/MiniMIPS32/MiniMIPS32.srcs/sources_1/ip/inst_rom/inst_rom.xci] -directory D:/projects/vivado/MiniMIPS32/MiniMIPS32.ip_user_files/sim_scripts -ip_user_files_dir D:/projects/vivado/MiniMIPS32/MiniMIPS32.ip_user_files -ipstatic_source_dir D:/projects/vivado/MiniMIPS32/MiniMIPS32.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/projects/vivado/MiniMIPS32/MiniMIPS32.cache/compile_simlib/modelsim} {questa=D:/projects/vivado/MiniMIPS32/MiniMIPS32.cache/compile_simlib/questa} {riviera=D:/projects/vivado/MiniMIPS32/MiniMIPS32.cache/compile_simlib/riviera} {activehdl=D:/projects/vivado/MiniMIPS32/MiniMIPS32.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/projects/vivado/MiniMIPS32/MiniMIPS32.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'E:/vivado/Vivado/2019.2/data/xsim/xsim.ini' copied to run dir:'D:/projects/vivado/MiniMIPS32/MiniMIPS32.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'MiniMIPS32_SYS_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'D:/projects/vivado/MiniMIPS32/MiniMIPS32.sim/sim_1/behav/xsim/inst_rom.mif'
+INFO: [SIM-utils-43] Exported 'D:/projects/vivado/MiniMIPS32/MiniMIPS32.sim/sim_1/behav/xsim/logic_inst.coe'
+INFO: [SIM-utils-43] Exported 'D:/projects/vivado/MiniMIPS32/MiniMIPS32.sim/sim_1/behav/xsim/and_inst.coe'
+INFO: [SIM-utils-43] Exported 'D:/projects/vivado/MiniMIPS32/MiniMIPS32.sim/sim_1/behav/xsim/init.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/projects/vivado/MiniMIPS32/MiniMIPS32.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj MiniMIPS32_SYS_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/projects/vivado/MiniMIPS32/MiniMIPS32.srcs/sources_1/ip/data_ram/sim/data_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/projects/vivado/MiniMIPS32/MiniMIPS32.srcs/sources_1/ip/inst_rom/sim/inst_rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module inst_rom
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/projects/vivado/MiniMIPS32/MiniMIPS32.srcs/sources_1/ip/clkdiv/clkdiv_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clkdiv_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/projects/vivado/MiniMIPS32/MiniMIPS32.srcs/sources_1/ip/clkdiv/clkdiv.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clkdiv
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/projects/vivado/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/MiniMIPS32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MiniMIPS32
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/projects/vivado/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/MiniMIPS32_SYS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MiniMIPS32_SYS
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/projects/vivado/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/exe_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module exe_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/projects/vivado/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/exemem_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module exemem_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/projects/vivado/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/hilo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hilo
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/projects/vivado/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/id_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module id_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/projects/vivado/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/idexe_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module idexe_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/projects/vivado/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/if_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module if_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/projects/vivado/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/ifid_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ifid_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/projects/vivado/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/mem_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/projects/vivado/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/memwb_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module memwb_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/projects/vivado/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/regfile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/projects/vivado/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/wb_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module wb_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/projects/vivado/MiniMIPS32/MiniMIPS32.srcs/sim_1/new/MiniMIPS32_SYS_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MiniMIPS32_SYS_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/projects/vivado/MiniMIPS32/MiniMIPS32.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/projects/vivado/MiniMIPS32/MiniMIPS32.sim/sim_1/behav/xsim'
+"xelab -wto bb1d9b6b857a46b28863b191d55162ea --incr --debug typical --relax --mt 2 -L blk_mem_gen_v8_4_4 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot MiniMIPS32_SYS_tb_behav xil_defaultlib.MiniMIPS32_SYS_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: E:/vivado/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto bb1d9b6b857a46b28863b191d55162ea --incr --debug typical --relax --mt 2 -L blk_mem_gen_v8_4_4 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot MiniMIPS32_SYS_tb_behav xil_defaultlib.MiniMIPS32_SYS_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUFDS
+Compiling module unisims_ver.MMCME2_ADV(CLKIN1_PERIOD=5.0,CLK...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clkdiv_clk_wiz
+Compiling module xil_defaultlib.clkdiv
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="kin...
+Compiling module xil_defaultlib.inst_rom
+Compiling module xil_defaultlib.if_stage
+Compiling module xil_defaultlib.ifid_reg
+Compiling module xil_defaultlib.id_stage
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.idexe_reg
+Compiling module xil_defaultlib.exe_stage
+Compiling module xil_defaultlib.exemem_reg
+Compiling module xil_defaultlib.mem_stage
+Compiling module xil_defaultlib.memwb_reg
+Compiling module xil_defaultlib.wb_stage
+Compiling module xil_defaultlib.hilo
+Compiling module xil_defaultlib.MiniMIPS32
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="kin...
+Compiling module xil_defaultlib.data_ram
+Compiling module xil_defaultlib.MiniMIPS32_SYS
+Compiling module xil_defaultlib.MiniMIPS32_SYS_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot MiniMIPS32_SYS_tb_behav
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 923.172 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/projects/vivado/MiniMIPS32/MiniMIPS32.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "MiniMIPS32_SYS_tb_behav -key {Behavioral:sim_1:Functional:MiniMIPS32_SYS_tb} -tclbatch {MiniMIPS32_SYS_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+source MiniMIPS32_SYS_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+# run 1ms
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MiniMIPS32_SYS_tb.SoC.inst_rom0.inst.native_mem_module.blk_mem_gen_v8_4_4_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module MiniMIPS32_SYS_tb.SoC.data_ram0.inst.native_mem_module.blk_mem_gen_v8_4_4_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+$stop called at time : 50200 ns : File "D:/projects/vivado/MiniMIPS32/MiniMIPS32.srcs/sim_1/new/MiniMIPS32_SYS_tb.v" Line 26
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'MiniMIPS32_SYS_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1ms
+launch_simulation: Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 949.742 ; gain = 26.570
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Oct 20 11:29:59 2022...
