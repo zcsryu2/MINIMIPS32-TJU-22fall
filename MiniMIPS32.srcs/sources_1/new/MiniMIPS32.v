@@ -23,10 +23,10 @@ module MiniMIPS32(
     wire [`WORD_BUS      ] id_pc_i;
     
     // 连接译码阶段ID模块与通用寄存器Regfile模块的变量 
-    wire 				   re1;
+    // wire 				   re1;
     wire [`REG_ADDR_BUS  ] ra1;
     wire [`REG_BUS       ] rd1;
-    wire 				   re2;
+    // wire 				   re2;
     wire [`REG_ADDR_BUS  ] ra2;
     wire [`REG_BUS       ] rd2;
     

@@ -27,11 +27,11 @@ module wb_stage(
     assign wb_whilo_o   = wb_whilo_i;
     assign wb_hilo_o    = wb_hilo_i;
 
-    wire [`WORD_BUS] data = (wb_dre_i == 4'b1111) ? {dm[7:0], dm[15:8]. dm[23:16], dm[31:24]} :
-        (wb_dre_i == 1000) ? {{24{dm[31]}}, dm[31:24]} :
-        (wb_dre_i == 0100) ? {{24{dm[31]}}, dm[23:16]} :
-        (wb_dre_i == 0010) ? {{24{dm[31]}}, dm[15:8]} :
-        (wb_dre_i == 0001) ? {{24{dm[31]}}, dm[7:0]} : `ZERO_WORD;
+    wire [`WORD_BUS] data = (wb_dre_i == 4'b1111) ? {dm[7:0], dm[15:8], dm[23:16], dm[31:24]} :
+        (wb_dre_i == 4'b1000) ? {{24{dm[31]}}, dm[31:24]} :
+        (wb_dre_i == 4'b0100) ? {{24{dm[31]}}, dm[23:16]} :
+        (wb_dre_i == 4'b0010) ? {{24{dm[31]}}, dm[15:8]} :
+        (wb_dre_i == 4'b0001) ? {{24{dm[31]}}, dm[7:0]} : `ZERO_WORD;
 
     assign wb_wd_o = (wb_mreg_i == `MREG_ENABLE) ? data : wb_dreg_i;
     
