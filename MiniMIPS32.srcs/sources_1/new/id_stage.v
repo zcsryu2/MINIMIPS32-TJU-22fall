@@ -1,5 +1,5 @@
 `include "defines.v"
-`include "Mux2.v"
+// `include "Mux2.v"
 module id_stage(
     
     // 从取指阶段获得的PC值
@@ -99,11 +99,11 @@ module id_stage(
     //获得访存阶段要存入数据存储器的数据
     // assign id_din_o     =rd2;
     // 获得源操作数1。如果shift信号有效，则源操作数1为移位位数；否则为从读通用寄存器堆端口1获得的数据
-    // assign id_src1_o = (shift  == `SHIFT_ENABLE   ) ? {27'b0,sa} : rd1;
-    Mux2 shiftmux(shift,rd1,{27'b0,sa},id_src1_o);
+    assign id_src1_o = (shift  == `SHIFT_ENABLE   ) ? {27'b0,sa} : rd1;
+    // Mux2 shiftmux(shift,rd1,{27'b0,sa},id_src1_o);
     // 获得源操作数2。如果immsel信号有效，则源操作数1为立即数；否则为从读通用寄存器堆端口2获得的数据
     wire [31:0] imm_ext = (upper == `UPPER_ENABLE)? (imm << 16):(sext==`SIGNED_EXT)?{{16{imm[15]}},imm}:{{16{1'b0}},imm};
-    // assign id_src2_o =  rd2 ;    
-    Mux2 immselmux(immsel,imm_ext,rd2,id_src2_o);                 
+    assign id_src2_o =  (immsel  == `IMM_ENABLE) ? imm_ext : rd2;    
+    // Mux2 immselmux(immsel,imm_ext,rd2,id_src2_o);                 
 
 endmodule

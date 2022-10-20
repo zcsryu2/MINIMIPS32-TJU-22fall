@@ -1,37 +1,36 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/shiyan/MiniMIPS32.srcs/sources_1/ip/inst_rom/sim/inst_rom.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/mips_pro/computer-organization-and-design/MiniMIPS32.srcs/sources_1/ip/data_ram/sim/data_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/mips_pro/computer-organization-and-design/MiniMIPS32.srcs/sources_1/ip/inst_rom/sim/inst_rom.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module inst_rom
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/shiyan/MiniMIPS32.srcs/sources_1/ip/clkdiv/clkdiv_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/mips_pro/computer-organization-and-design/MiniMIPS32.srcs/sources_1/ip/clkdiv/clkdiv_clk_wiz.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module clkdiv_clk_wiz
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/shiyan/MiniMIPS32.srcs/sources_1/ip/clkdiv/clkdiv.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/mips_pro/computer-organization-and-design/MiniMIPS32.srcs/sources_1/ip/clkdiv/clkdiv.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module clkdiv
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/shiyan/MiniMIPS32.srcs/sources_1/new/MiniMIPS32.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/mips_pro/computer-organization-and-design/MiniMIPS32.srcs/sources_1/new/MiniMIPS32.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module MiniMIPS32
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/shiyan/MiniMIPS32.srcs/sources_1/new/MiniMIPS32_SYS.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/mips_pro/computer-organization-and-design/MiniMIPS32.srcs/sources_1/new/MiniMIPS32_SYS.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module MiniMIPS32_SYS
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/shiyan/MiniMIPS32.srcs/sources_1/new/Mux2.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Mux2
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/shiyan/MiniMIPS32.srcs/sources_1/new/exe_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/mips_pro/computer-organization-and-design/MiniMIPS32.srcs/sources_1/new/exe_stage.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module exe_stage
-INFO: [VRFC 10-2458] undeclared symbol moveres, assumed default net type wire [E:/shiyan/MiniMIPS32.srcs/sources_1/new/exe_stage.v:48]
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/shiyan/MiniMIPS32.srcs/sources_1/new/exemem_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/mips_pro/computer-organization-and-design/MiniMIPS32.srcs/sources_1/new/exemem_reg.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module exemem_reg
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/shiyan/MiniMIPS32.srcs/sources_1/new/id_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/mips_pro/computer-organization-and-design/MiniMIPS32.srcs/sources_1/new/hilo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hilo
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/mips_pro/computer-organization-and-design/MiniMIPS32.srcs/sources_1/new/id_stage.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module id_stage
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/shiyan/MiniMIPS32.srcs/sources_1/new/idexe_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/mips_pro/computer-organization-and-design/MiniMIPS32.srcs/sources_1/new/idexe_reg.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module idexe_reg
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/shiyan/MiniMIPS32.srcs/sources_1/new/if_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/mips_pro/computer-organization-and-design/MiniMIPS32.srcs/sources_1/new/if_stage.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module if_stage
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/shiyan/MiniMIPS32.srcs/sources_1/new/ifid_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/mips_pro/computer-organization-and-design/MiniMIPS32.srcs/sources_1/new/ifid_reg.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ifid_reg
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/shiyan/MiniMIPS32.srcs/sources_1/new/mem_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/mips_pro/computer-organization-and-design/MiniMIPS32.srcs/sources_1/new/mem_stage.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module mem_stage
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/shiyan/MiniMIPS32.srcs/sources_1/new/memwb_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/mips_pro/computer-organization-and-design/MiniMIPS32.srcs/sources_1/new/memwb_reg.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module memwb_reg
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/shiyan/MiniMIPS32.srcs/sources_1/new/regfile.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/mips_pro/computer-organization-and-design/MiniMIPS32.srcs/sources_1/new/regfile.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module regfile
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/shiyan/MiniMIPS32.srcs/sources_1/new/wb_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/mips_pro/computer-organization-and-design/MiniMIPS32.srcs/sources_1/new/wb_stage.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module wb_stage
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/shiyan/MiniMIPS32.srcs/sim_1/new/MiniMIPS32_SYS_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/mips_pro/computer-organization-and-design/MiniMIPS32.srcs/sim_1/new/MiniMIPS32_SYS_tb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module MiniMIPS32_SYS_tb
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/shiyan/MiniMIPS32.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl

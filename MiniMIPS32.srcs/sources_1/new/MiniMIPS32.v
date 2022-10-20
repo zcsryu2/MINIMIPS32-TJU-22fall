@@ -89,19 +89,18 @@ module MiniMIPS32(
 
     id_stage id_stage0(.id_pc_i(id_pc_i), 
         .id_inst_i(inst),
-        .rd1(rd1), .rd2(rd2),
-        .rreg1(re1), .rreg2(re2), 	  
+        .rd1(rd1), .rd2(rd2),	  
         .ra1(ra1), .ra2(ra2), 
         .id_aluop_o(id_aluop_o), .id_alutype_o(id_alutype_o),
         .id_src1_o(id_src1_o), .id_src2_o(id_src2_o),
         .id_wa_o(id_wa_o), .id_wreg_o(id_wreg_o),
-        .if_whilo_o(id_whilo_o)
+        .id_whilo_o(id_whilo_o)
     );
     
     regfile regfile0(.cpu_clk_50M(cpu_clk_50M), .cpu_rst_n(cpu_rst_n),
         .we(wb_wreg_o), .wa(wb_wa_o), .wd(wb_wd_o),
-        .re1(re1), .ra1(ra1), .rd1(rd1),
-        .re2(re2), .ra2(ra2), .rd2(rd2)
+        .ra1(ra1), .rd1(rd1),
+        .ra2(ra2), .rd2(rd2)
     );
     
     idexe_reg idexe_reg0(.cpu_clk_50M(cpu_clk_50M), .cpu_rst_n(cpu_rst_n), 

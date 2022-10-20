@@ -12,12 +12,12 @@ module regfile(
 	// 读端口1
 	input  wire  [`REG_ADDR_BUS] ra1,
 	output reg   [`REG_BUS 	   ] rd1,
-	input  wire 				 re1,
+	// input  wire 				 re1,
 	
 	// 读端口2 
 	input  wire  [`REG_ADDR_BUS] ra2,
-	output reg   [`REG_BUS 	   ] rd2,
-	input  wire 			     re2
+	output reg   [`REG_BUS 	   ] rd2
+	// input  wire 			     re2
     );
 
     //定义32个32位寄存器
@@ -69,10 +69,11 @@ module regfile(
 	always @(*) begin
 		 if (ra1 == `REG_NOP)
 			rd1 <= `ZERO_WORD;
-		else if (re1 == `READ_ENABLE)
-			rd1 <= regs[ra1];
+		// else if (re1 == `READ_ENABLE)
 		else
-			rd1 <= `ZERO_WORD;
+			rd1 <= regs[ra1];
+		// else
+		// 	rd1 <= `ZERO_WORD;
 	end
 	
 	//读端口2的读操作 
@@ -80,10 +81,11 @@ module regfile(
 	always @(*) begin
 		if (ra2 == `REG_NOP)
 			rd2 <= `ZERO_WORD;
-		else if (re2 == `READ_ENABLE)
-			rd2 <= regs[ra2];
+		// else if (re2 == `READ_ENABLE)
 		else
-			rd2 <= `ZERO_WORD;
+			rd2 <= regs[ra2];
+		// else
+		// 	rd2 <= `ZERO_WORD;
 	end
 
 endmodule
