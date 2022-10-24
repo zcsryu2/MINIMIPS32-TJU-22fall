@@ -1,12 +1,12 @@
 Vivado Simulator 2019.2
 Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: D:/vivado/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto bb1d9b6b857a46b28863b191d55162ea --incr --debug typical --relax --mt 2 -L blk_mem_gen_v8_4_4 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot MiniMIPS32_SYS_tb_behav xil_defaultlib.MiniMIPS32_SYS_tb xil_defaultlib.glbl -log elaborate.log 
+Running: E:/vivado/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto bb1d9b6b857a46b28863b191d55162ea --incr --debug typical --relax --mt 2 -L blk_mem_gen_v8_4_4 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot MiniMIPS32_SYS_tb_behav xil_defaultlib.MiniMIPS32_SYS_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 1 for port 'id_mreg_o' [E:/mips_pro/computer-organization-and-design/MiniMIPS32.srcs/sources_1/new/MiniMIPS32.v:113]
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 32 for port 'dre' [E:/mips_pro/computer-organization-and-design/MiniMIPS32.srcs/sources_1/new/MiniMIPS32.v:164]
-WARNING: [VRFC 10-5021] port 'dm' is not connected on this instance [E:/mips_pro/computer-organization-and-design/MiniMIPS32.srcs/sources_1/new/MiniMIPS32_SYS.v:35]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 1 for port 'id_mreg_o' [D:/projects/vivado/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/MiniMIPS32.v:113]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 32 for port 'dre' [D:/projects/vivado/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/MiniMIPS32.v:164]
+WARNING: [VRFC 10-5021] port 'dm' is not connected on this instance [D:/projects/vivado/MiniMIPS32/MiniMIPS32.srcs/sources_1/new/MiniMIPS32_SYS.v:35]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis

@@ -6,4 +6,4 @@ Block Memory Generator module MiniMIPS32_SYS_tb.SoC.inst_rom0.inst.native_mem_mo
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
 Block Memory Generator module MiniMIPS32_SYS_tb.SoC.data_ram0.inst.native_mem_module.blk_mem_gen_v8_4_4_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
-$stop called at time : 50200 ns : File "E:/mips_pro/computer-organization-and-design/MiniMIPS32.srcs/sim_1/new/MiniMIPS32_SYS_tb.v" Line 26
+$stop called at time : 50200 ns : File "D:/projects/vivado/MiniMIPS32/MiniMIPS32.srcs/sim_1/new/MiniMIPS32_SYS_tb.v" Line 26

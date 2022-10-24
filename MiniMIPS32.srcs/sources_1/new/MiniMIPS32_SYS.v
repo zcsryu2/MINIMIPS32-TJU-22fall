@@ -37,7 +37,11 @@ module MiniMIPS32_SYS(
         .cpu_rst_n(sys_rst_n),
         .iaddr(iaddr),
         .ice(ice),
-        .inst(inst)
+        .inst(inst),
+        .dce(dce),
+        .daddr(daadr),
+        .we(we),
+        .dm(dout)
     );
     
     data_ram data_ram0 (

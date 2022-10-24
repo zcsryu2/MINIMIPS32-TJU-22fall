@@ -36,30 +36,38 @@ module mem_stage (
     assign mem_hilo_o   = mem_hilo_i;
 
     wire inst_lb = (mem_aluop_i == 8'h90);
+    wire inst_lbu = (mem_aluop_i == 8'h91);
     wire inst_lw = (mem_aluop_i == 8'h92);
+    wire inst_lh = (mem_aluop_i == 8'h94);
+    wire inst_lhu = (mem_aluop_i == 8'h96);
     wire inst_sb = (mem_aluop_i == 8'h98);
+    wire inst_sh = (mem_aluop_i == 8'h99);
     wire inst_sw = (mem_aluop_i == 8'h9A);
 
     assign daddr = mem_wd_i;
 
-    assign dre[3] = ((inst_lb & (daddr[1:0] == 2'b00)) | inst_lw);
-    assign dre[2] = ((inst_lb & (daddr[1:0] == 2'b01)) | inst_lw);
-    assign dre[1] = ((inst_lb & (daddr[1:0] == 2'b10)) | inst_lw);
-    assign dre[0] = ((inst_lb & (daddr[1:0] == 2'b11)) | inst_lw);
+    assign dre[3] = (((inst_lb|inst_lbu) & (daddr[1:0] == 2'b00)) | ((inst_lh|inst_lhu) & (daddr[1:0] == 2'b00)) | inst_lw);
+    assign dre[2] = (((inst_lb|inst_lbu) & (daddr[1:0] == 2'b01)) | ((inst_lh|inst_lhu) & (daddr[1:0] == 2'b00)) | inst_lw);
+    assign dre[1] = (((inst_lb|inst_lbu) & (daddr[1:0] == 2'b10)) | ((inst_lh|inst_lhu) & (daddr[1:0] == 2'b10)) | inst_lw);
+    assign dre[0] = (((inst_lb|inst_lbu) & (daddr[1:0] == 2'b11)) | ((inst_lh|inst_lhu) & (daddr[1:0] == 2'b10)) | inst_lw);
 
-    assign dre = (inst_lb | inst_lw | inst_sb | inst_sw);
+    assign dre = (inst_lb | inst_lbu | inst_lw | inst_lh | inst_lhu | inst_sb | inst_sh | inst_sw);
 
-    assign we[3] = ((inst_sb & (daddr[1:0] == 2'b00)) | inst_sw);
-    assign we[2] = ((inst_sb & (daddr[1:0] == 2'b01)) | inst_sw);
-    assign we[1] = ((inst_sb & (daddr[1:0] == 2'b10)) | inst_sw);
-    assign we[0] = ((inst_sb & (daddr[1:0] == 2'b11)) | inst_sw);
+    assign we[3] = ((inst_sb & (daddr[1:0] == 2'b00)) | (inst_sh & (daddr[1:0] == 2'b00)) | inst_sw);
+    assign we[2] = ((inst_sb & (daddr[1:0] == 2'b01)) | (inst_sh & (daddr[1:0] == 2'b00)) | inst_sw);
+    assign we[1] = ((inst_sb & (daddr[1:0] == 2'b10)) | (inst_sh & (daddr[1:0] == 2'b10)) | inst_sw);
+    assign we[0] = ((inst_sb & (daddr[1:0] == 2'b11)) | (inst_sh & (daddr[1:0] == 2'b10)) | inst_sw);
 
     wire [`WORD_BUS] din_reverse = {mem_din_i[7:0], mem_din_i[15:8], mem_din_i[23:16], mem_din_i[31:24]};
     wire [`WORD_BUS] din_byte = {mem_din_i[7:0], mem_din_i[7:0], mem_din_i[7:0], mem_din_i[7:0]};
+    wire [`WORD_BUS] din_hw = {mem_din_i[7:0], mem_din_i[15:8], mem_din_i[7:0], mem_din_i[15:8]};
+
     assign din = (we == 4'b1111) ? din_reverse : 
-        (we == 4'b1000) ? din_reverse : 
+        (we == 4'b1000) ? din_byte : 
         (we == 4'b0100) ? din_byte : 
         (we == 4'b0010) ? din_byte : 
-        (we == 4'b0001) ? din_byte : `ZERO_WORD;
+        (we == 4'b0001) ? din_byte : 
+        (we == 4'b0011) ? din_byte : 
+        (we == 4'b1100) ? din_byte : `ZERO_WORD;
 
 endmodule
