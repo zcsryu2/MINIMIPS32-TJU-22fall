@@ -85,7 +85,7 @@ module regfile(
 			rd2 <= `ZERO_WORD;
 		// else if (re2 == `READ_ENABLE)
 		else if ((we == `WRITE_ENABLE) && (wa == ra2))
-			rd1 <= wd;
+			rd2 <= wd;
 		else
 			rd2 <= regs[ra2];
 		// else
