@@ -302,3 +302,8 @@ dismissDialog("Run Simulation"); // e (cr)
 // TclEventType: FILE_SET_CHANGE
 // TclEventType: DG_GRAPH_STALE
 // TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 947 MB. GUI used memory: 57 MB. Current time: 11/11/22, 5:01:55 PM GMT+08:00
+// HMemoryUtils.trashcanNow. Engine heap size: 947 MB. GUI used memory: 57 MB. Current time: 11/11/22, 5:31:55 PM GMT+08:00
+// HMemoryUtils.trashcanNow. Engine heap size: 947 MB. GUI used memory: 56 MB. Current time: 11/11/22, 6:01:55 PM GMT+08:00
+// HMemoryUtils.trashcanNow. Engine heap size: 947 MB. GUI used memory: 56 MB. Current time: 11/11/22, 6:31:56 PM GMT+08:00
+// HMemoryUtils.trashcanNow. Engine heap size: 947 MB. GUI used memory: 56 MB. Current time: 11/11/22, 7:01:56 PM GMT+08:00

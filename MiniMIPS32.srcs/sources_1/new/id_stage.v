@@ -157,7 +157,7 @@ module id_stage(
     assign ra1   = rs;
     assign ra2   = rt;
     //获得访存阶段存入数据存储器的数据
-    assign id_din_o = rd2;       
+    // assign id_din_o = rd2;       
     assign id_sext_o = sext;                                
     // 获得待写入目的寄存器的地址（rt或rd）
     assign id_wa_o      = (rtsel == `RT_ENABLE)?rt : rd;
