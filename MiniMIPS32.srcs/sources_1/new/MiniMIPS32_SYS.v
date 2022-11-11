@@ -39,8 +39,9 @@ module MiniMIPS32_SYS(
         .ice(ice),
         .inst(inst),
         .dce(dce),
-        .daddr(daadr),
+        .daddr(daddr),
         .we(we),
+        .din(din),
         .dm(dout)
     );
     

@@ -1,10 +1,10 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Wed Oct 19 16:47:55 2022
+-- Date        : Thu Nov  3 20:33:14 2022
 -- Host        : DESKTOP-6BSVO40 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               E:/mips_pro/computer-organization-and-design/MiniMIPS32.srcs/sources_1/ip/inst_rom/inst_rom_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top inst_rom -prefix
+--               inst_rom_ inst_rom_sim_netlist.vhdl
 -- Design      : inst_rom
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -21,8 +21,6 @@ entity inst_rom_blk_mem_gen_prim_wrapper_init is
     ena : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 10 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of inst_rom_blk_mem_gen_prim_wrapper_init : entity is "blk_mem_gen_prim_wrapper_init";
 end inst_rom_blk_mem_gen_prim_wrapper_init;
 
 architecture STRUCTURE of inst_rom_blk_mem_gen_prim_wrapper_init is
@@ -45,7 +43,7 @@ begin
       DOB_REG => 0,
       EN_ECC_READ => false,
       EN_ECC_WRITE => false,
-      INITP_00 => X"0000000000000000000000000000000000000000000000000000000000504101",
+      INITP_00 => X"0000000000000000000000000000000000000000000400080050002005000200",
       INITP_01 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_02 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_03 => X"0000000000000000000000000000000000000000000000000000000000000000",
@@ -61,9 +59,9 @@ begin
       INITP_0D => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_0E => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_0F => X"0000000000000000000000000000000000000000000000000000000000000000",
-      INIT_00 => X"0000000000001100800014341100110020001100122C112400000000813C0034",
-      INIT_01 => X"0000000000000000000000000000000000000000000000000000004A00000000",
-      INIT_02 => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_00 => X"0000883C0890088000000000000008A00000000000008836000000000000883C",
+      INIT_01 => X"00000000883C013C0894088400000000000008A4000000000000883600000000",
+      INIT_02 => X"00000000000000000000004A088C00000000000008AC00000000000088360000",
       INIT_03 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_04 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_05 => X"0000000000000000000000000000000000000000000000000000000000000000",
@@ -313,9 +311,9 @@ begin
       INITP_0D => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_0E => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_0F => X"0000000000000000000000000000000000000000000000000000000000000000",
-      INIT_00 => X"0816000000000C00001432401210150E114C100A340002000000000000193200",
-      INIT_01 => X"0000000000000000000000000000000000000000000000000000000000000918",
-      INIT_02 => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_00 => X"0000793C0200020000000000000002000000000000007A3C000000000000793C",
+      INIT_01 => X"00000000793C00200400040000000000000004000000000000007A3C00000000",
+      INIT_02 => X"000000000000000000000000080000000000000008000000000000007A3C0000",
       INIT_03 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_04 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_05 => X"0000000000000000000000000000000000000000000000000000000000000000",
@@ -523,8 +521,6 @@ entity inst_rom_blk_mem_gen_prim_width is
     ena : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 10 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of inst_rom_blk_mem_gen_prim_width : entity is "blk_mem_gen_prim_width";
 end inst_rom_blk_mem_gen_prim_width;
 
 architecture STRUCTURE of inst_rom_blk_mem_gen_prim_width is
@@ -573,8 +569,6 @@ entity inst_rom_blk_mem_gen_generic_cstr is
     ena : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 10 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of inst_rom_blk_mem_gen_generic_cstr : entity is "blk_mem_gen_generic_cstr";
 end inst_rom_blk_mem_gen_generic_cstr;
 
 architecture STRUCTURE of inst_rom_blk_mem_gen_generic_cstr is
@@ -605,8 +599,6 @@ entity inst_rom_blk_mem_gen_top is
     ena : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 10 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of inst_rom_blk_mem_gen_top : entity is "blk_mem_gen_top";
 end inst_rom_blk_mem_gen_top;
 
 architecture STRUCTURE of inst_rom_blk_mem_gen_top is
@@ -630,8 +622,6 @@ entity inst_rom_blk_mem_gen_v8_4_4_synth is
     ena : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 10 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of inst_rom_blk_mem_gen_v8_4_4_synth : entity is "blk_mem_gen_v8_4_4_synth";
 end inst_rom_blk_mem_gen_v8_4_4_synth;
 
 architecture STRUCTURE of inst_rom_blk_mem_gen_v8_4_4_synth is
@@ -864,8 +854,6 @@ entity inst_rom_blk_mem_gen_v8_4_4 is
   attribute C_WRITE_WIDTH_B of inst_rom_blk_mem_gen_v8_4_4 : entity is 32;
   attribute C_XDEVICEFAMILY : string;
   attribute C_XDEVICEFAMILY of inst_rom_blk_mem_gen_v8_4_4 : entity is "kintex7";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of inst_rom_blk_mem_gen_v8_4_4 : entity is "blk_mem_gen_v8_4_4";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of inst_rom_blk_mem_gen_v8_4_4 : entity is "yes";
 end inst_rom_blk_mem_gen_v8_4_4;

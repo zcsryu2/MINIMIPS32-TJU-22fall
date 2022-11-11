@@ -24,7 +24,8 @@
 module hilo(
     input   wire    cpu_clk_50M,
     input   wire    cpu_rst_n,
-
+    input   wire    we_hi,
+    input   wire    we_lo,
     // 写端口
     input   wire            we,
     input   wire[`REG_BUS]  hi_i,
@@ -42,6 +43,14 @@ module hilo(
         end
         else if (we == `WRITE_ENABLE) begin
             hi_o <= hi_i;
+            lo_o <= lo_i;
+        end
+        else if(we_hi == `WRITE_ENABLE) begin
+            hi_o <= hi_i;
+            
+        end
+        else if(we_lo == `WRITE_ENABLE) begin
+           
             lo_o <= lo_i;
         end
         

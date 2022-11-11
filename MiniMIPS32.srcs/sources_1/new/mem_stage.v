@@ -10,8 +10,10 @@ module mem_stage (
     input  wire                         mem_whilo_i,
     input  wire [`DOUBLE_REG_BUS]       mem_hilo_i,
     input  wire                         mem_mreg_i,
+    input  wire                         mem_whi_i,
+    input  wire                         mem_wlo_i,
     input  wire [`REG_BUS     ]         mem_din_i,
-    
+    input  wire [`REG_BUS     ]         mem_sext_i,
     // 送至写回阶段的信息
     output wire [`REG_ADDR_BUS  ]       mem_wa_o,
     output wire                         mem_wreg_o,
@@ -19,6 +21,9 @@ module mem_stage (
     output wire                         mem_whilo_o,
     output wire [`DOUBLE_REG_BUS]       mem_hilo_o,
     output wire                         mem_mreg_o,
+    output wire                         mem_whi_o,
+    output wire                         mem_wlo_o,
+    output wire                         mem_sext_o,
     output wire [`REG_BUS       ]       dre,
 
     // 送至数据存储器的信号
@@ -34,7 +39,10 @@ module mem_stage (
     assign mem_dreg_o   = mem_wd_i;
     assign mem_whilo_o  = mem_whilo_i;
     assign mem_hilo_o   = mem_hilo_i;
-
+    assign mem_mreg_o   = mem_mreg_i;
+    assign mem_whi_o    = mem_whi_i;
+    assign mem_wlo_o    = mem_wlo_i;
+    assign mem_sext_o    = mem_sext_i;
     wire inst_lb = (mem_aluop_i == 8'h90);
     wire inst_lbu = (mem_aluop_i == 8'h91);
     wire inst_lw = (mem_aluop_i == 8'h92);
@@ -51,7 +59,7 @@ module mem_stage (
     assign dre[1] = (((inst_lb|inst_lbu) & (daddr[1:0] == 2'b10)) | ((inst_lh|inst_lhu) & (daddr[1:0] == 2'b10)) | inst_lw);
     assign dre[0] = (((inst_lb|inst_lbu) & (daddr[1:0] == 2'b11)) | ((inst_lh|inst_lhu) & (daddr[1:0] == 2'b10)) | inst_lw);
 
-    assign dre = (inst_lb | inst_lbu | inst_lw | inst_lh | inst_lhu | inst_sb | inst_sh | inst_sw);
+    assign dce = (inst_lb | inst_lbu | inst_lw | inst_lh | inst_lhu | inst_sb | inst_sh | inst_sw);
 
     assign we[3] = ((inst_sb & (daddr[1:0] == 2'b00)) | (inst_sh & (daddr[1:0] == 2'b00)) | inst_sw);
     assign we[2] = ((inst_sb & (daddr[1:0] == 2'b01)) | (inst_sh & (daddr[1:0] == 2'b00)) | inst_sw);
@@ -67,7 +75,7 @@ module mem_stage (
         (we == 4'b0100) ? din_byte : 
         (we == 4'b0010) ? din_byte : 
         (we == 4'b0001) ? din_byte : 
-        (we == 4'b0011) ? din_byte : 
-        (we == 4'b1100) ? din_byte : `ZERO_WORD;
+        (we == 4'b0011) ? din_hw : 
+        (we == 4'b1100) ? din_hw : `ZERO_WORD;
 
 endmodule

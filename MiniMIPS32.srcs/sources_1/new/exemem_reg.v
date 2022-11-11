@@ -13,7 +13,9 @@ module exemem_reg (
     input  wire [`DOUBLE_REG_BUS] exe_hilo,
     input  wire                 exe_mreg,
     input  wire [`REG_BUS     ] exe_din,
-    
+    input  wire                     exe_whi,
+    input  wire                     exe_wlo,
+    input  wire                     exe_sext,
     // 送到访存阶段的信息 
     output reg  [`ALUOP_BUS   ] mem_aluop,
     output reg  [`REG_ADDR_BUS] mem_wa,
@@ -21,7 +23,10 @@ module exemem_reg (
     output reg  [`REG_BUS 	  ] mem_wd,
     output reg                  mem_whilo,
     output reg  [`DOUBLE_REG_BUS] mem_hilo,
+    output reg                      mem_whi,
+    output reg                      mem_wlo,
     output reg                  mem_mreg,
+    output reg                  mem_sext,
     output reg  [`REG_BUS     ] mem_din
     );
 
@@ -35,6 +40,9 @@ module exemem_reg (
         mem_hilo               <= `ZERO_WORD;
         mem_mreg               <= `WRITE_DISABLE;
         mem_din                <= `ZERO_WORD;
+        mem_whi                <= `FALSE_V;
+        mem_wlo                <= `FALSE_V;
+        mem_sext               <= 1'b0;
     end
     else begin
         mem_aluop              <= exe_aluop;
@@ -42,9 +50,12 @@ module exemem_reg (
         mem_wreg 			   <= exe_wreg;
         mem_wd 		    	   <= exe_wd;
         mem_whilo              <= exe_whilo;
-        mem_hilo               <= exe_hilo;
+        mem_hilo               <= exe_hilo;       
+        mem_whi                <= exe_whi;
+        mem_wlo                <= exe_wlo;
         mem_mreg               <= exe_mreg;
         mem_din                <= exe_din;
+        mem_sext               <= exe_sext;
     end
   end
 

@@ -12,6 +12,9 @@ module exe_stage (
     input  wire                     exe_whilo_i,
     input  wire                     exe_mreg_i,
     input  wire [`REG_BUS   ]       exe_din_i,
+    input  wire                     exe_whi_i,
+    input  wire                     exe_wlo_i,
+    input  wire                     exe_sext_i,
 
     input  wire [`REG_BUS 	]       hi_i,
     input  wire [`REG_BUS 	]       lo_i,
@@ -24,6 +27,9 @@ module exe_stage (
     output wire                     exe_whilo_o,
     output wire [`DOUBLE_REG_BUS]   exe_hilo_o,
     output wire                     exe_mreg_o,
+    output wire                     exe_whi_o,
+    output wire                     exe_wlo_o,
+    output wire                     exe_sext_o,
     output wire [`REG_BUS   ]       exe_din_o
     );
 
@@ -32,7 +38,9 @@ module exe_stage (
     assign exe_whilo_o = exe_whilo_i;
     assign exe_mreg_o  = exe_mreg_i;
     assign exe_din_o   = exe_din_i;
-
+    assign exe_whi_o   = exe_whi_i;
+    assign exe_wlo_o   = exe_wlo_i;
+    assign exe_sext_o   = exe_sext_i;
     wire [`REG_BUS       ]      logicres;       // 保存逻辑运算的结果
     wire [`REG_BUS       ]      shiftres;       // 保存移位运算的结果
     wire [`REG_BUS       ]      arithres;       // 保存算术操作的结果
@@ -54,8 +62,8 @@ module exe_stage (
            
     assign shiftres = (exe_aluop_i == `MINIMIPS32_SLL) ? (exe_src2_i << exe_src1_i) :
         (exe_aluop_i == `MINIMIPS32_SLLV) ? (exe_src2_i << exe_src1_i[`REG_ADDR_BUS]) :
-        (exe_aluop_i == `MINIMIPS32_SRA) ? ($signed(exe_src2_i) >>> exe_src1_i) :
-        (exe_aluop_i == `MINIMIPS32_SRAV) ? ($signed(exe_src2_i) >>> exe_src1_i[`REG_ADDR_BUS]) :
+        (exe_aluop_i == `MINIMIPS32_SRA) ? $signed(($signed(exe_src2_i)) >>> exe_src1_i) :
+        (exe_aluop_i == `MINIMIPS32_SRAV) ? $signed(($signed(exe_src2_i)) >>> exe_src1_i[`REG_ADDR_BUS]) :
         (exe_aluop_i == `MINIMIPS32_SRL) ? (exe_src2_i >>> exe_src1_i) :
         (exe_aluop_i == `MINIMIPS32_SRLV) ? (exe_src2_i >> exe_src1_i[`REG_ADDR_BUS]) : `ZERO_WORD;
     assign arithres = (exe_aluop_i == `MINIMIPS32_ADD) ? (exe_src1_i + exe_src2_i) :

@@ -12,14 +12,19 @@ module memwb_reg (
     input  wire [`DOUBLE_REG_BUS] 	mem_hilo,
 	input  wire 					mem_mreg,
 	input  wire [`BSEL_BUS		]   mem_dre,
-
+	input  wire                     mem_whi,
+	input  wire                     mem_wlo,
+	input  wire                     mem_sext,
 	// 送至写回阶段的信息 
 	output reg  [`REG_ADDR_BUS  ]   wb_wa,
 	output reg                      wb_wreg,
 	output reg  [`REG_BUS       ]   wb_dreg,
 	output reg                  	wb_whilo,
     output reg [`DOUBLE_REG_BUS] 	wb_hilo,
+	output reg                      wb_whi,
+	output reg                      wb_wlo,
 	output reg 						wb_mreg,
+	output reg 						wb_sext,
 	output reg [`BSEL_BUS		]   wb_dre
     );
 
@@ -33,6 +38,9 @@ module memwb_reg (
         	wb_hilo     <= `ZERO_WORD;
 			wb_mreg		<= `WRITE_DISABLE;
 			wb_dre		<= 4'b0;
+			wb_whi      <= `FALSE_V;
+			wb_wlo      <= `FALSE_V;
+			wb_sext      <= 1'b0;
 		end
 		// 将来自访存阶段的信息寄存并送至写回阶段
 		else begin
@@ -43,6 +51,9 @@ module memwb_reg (
         	wb_hilo     <= mem_hilo;
 			wb_mreg		<= mem_mreg;
 			wb_dre		<= mem_dre;
+			wb_whi      <= mem_whi;
+			wb_wlo      <= mem_wlo;
+			wb_sext      <= mem_sext;
 		end
 	end
 
