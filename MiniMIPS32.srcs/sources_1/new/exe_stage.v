@@ -19,6 +19,14 @@ module exe_stage (
     input  wire [`REG_BUS 	]       hi_i,
     input  wire [`REG_BUS 	]       lo_i,
 
+    // 从访存阶段获得的HI, LO寄存器的值
+    input  wire                     mem2exe_whilo,
+    input  wire [`DOUBLE_REG_BUS]   mem2exe_hilo,          
+
+    // 从写回阶段获得的HI, LO寄存器的值
+    input  wire                     wb2exe_whilo,
+    input  wire [`DOUBLE_REG_BUS]   wb2exe_hilo, 
+
     // 送至访存阶段的信息
     output wire [`ALUOP_BUS	] 	    exe_aluop_o,
     output wire [`REG_ADDR_BUS 	] 	exe_wa_o,
@@ -86,8 +94,10 @@ module exe_stage (
             (exe_aluop_i == `MINIMIPS32_SH) ? (exe_src1_i + exe_src2_i) : 
             `ZERO_WORD;
 
-    assign hi_t = hi_i;
-    assign lo_t = lo_i;
+    assign hi_t = (mem2exe_whilo == `WRITE_ENABLE) ? mem2exe_hilo[63:32] :
+        (wb2exe_whilo == `WRITE_ENABLE) ? wb2exe_hilo[63:32] : hi_i;
+    assign lo_t = (mem2exe_whilo == `WRITE_ENABLE) ? mem2exe_hilo[31:0] :
+        (wb2exe_whilo == `WRITE_ENABLE) ? wb2exe_hilo[31:0] : lo_i;
     assign moveres = (exe_aluop_i == `MINIMIPS32_MFHI) ? hi_t :
         (exe_aluop_i == `MINIMIPS32_MFLO) ? lo_t : `ZERO_WORD;
 

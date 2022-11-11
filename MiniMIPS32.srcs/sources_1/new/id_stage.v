@@ -11,7 +11,17 @@ module id_stage(
     // 从通用寄存器堆读出的数据 
     input  wire [`REG_BUS      ]    rd1,
     input  wire [`REG_BUS      ]    rd2,
-      
+    
+    // 从执行阶段获得的写回信号
+    input  wire                     exe2id_wreg,
+    input  wire [`REG_ADDR_BUS]     exe2id_wa,
+    input  wire [`INST_BUS]         exe2id_wd,
+
+    // 从访存阶段获得的写回信号
+    input  wire                     mem2id_wreg,
+    input  wire [`REG_ADDR_BUS]     mem2id_wa,
+    input  wire [`INST_BUS]         mem2id_wd,
+
     // 送至执行阶段的译码信息
     output wire [`ALUTYPE_BUS  ]    id_alutype_o,
     output wire [`ALUOP_BUS    ]    id_aluop_o,
@@ -133,7 +143,7 @@ module id_stage(
                              inst_addi | inst_slti | inst_andi | inst_xori | inst_lbu | inst_lh | inst_lhu | inst_sh;
     wire rtsel             = inst_ori | inst_lui | inst_addiu|inst_sltiu|inst_lb|inst_lw| 
                              inst_addi | inst_slti | inst_andi | inst_xori | inst_lbu | inst_lh | inst_lhu  ;
-    wire sext              = inst_addiu | inst_sltiu |inst_sb|inst_sw|inst_lb|inst_lw| inst_addi | inst_slti | 
+    wire sext              = inst_addiu | inst_sltiu | inst_sb | inst_sw | inst_lb | inst_lw | inst_addi | inst_slti | 
                               inst_lh |  inst_sh ; 
     wire upper             = inst_lui;
     // 读通用寄存器堆端口1使能信号
@@ -154,14 +164,30 @@ module id_stage(
     //只写hi寄存器和lo寄存器的使能
     assign id_whi_o =  inst_mthi;
     assign id_wlo_o =  inst_mtlo;
+
+    // 产生源操作数选择信号, 定向前推
+    wire [1:0] fwrd1 = (exe2id_wreg == `WRITE_ENABLE && exe2id_wa == ra1) ? 2'b01 :
+        (mem2id_wreg == `WRITE_ENABLE && mem2id_wa == ra1) ? 2'b10 : 
+        2'b00;
+
+    wire [1:0] fwrd2 = (exe2id_wreg == `WRITE_ENABLE && exe2id_wa == ra2) ? 2'b01 :
+        (mem2id_wreg == `WRITE_ENABLE && mem2id_wa == ra2) ? 2'b10 : 
+        2'b00;
+
     //获得访存阶段要存入数据存储器的数据
     // assign id_din_o     =rd2;
     // 获得源操作数1。如果shift信号有效，则源操作数1为移位位数；否则为从读通用寄存器堆端口1获得的数据
-    assign id_src1_o = (shift  == `SHIFT_ENABLE   ) ? {27'b0,sa} : rd1;
+    assign id_src1_o = (shift  == `SHIFT_ENABLE   ) ? {27'b0,sa} :
+        (fwrd1 == 2'b01) ? exe2id_wd :
+        (fwrd1 == 2'b10) ? mem2id_wd : rd1;
     // Mux2 shiftmux(shift,rd1,{27'b0,sa},id_src1_o);
     // 获得源操作数2。如果immsel信号有效，则源操作数1为立即数；否则为从读通用寄存器堆端口2获得的数据
     wire [31:0] imm_ext = (upper == `UPPER_ENABLE)? (imm << 16):(sext==`SIGNED_EXT)?{{16{imm[15]}},imm}:{{16{1'b0}},imm};
-    assign id_src2_o =  (immsel  == `IMM_ENABLE) ? imm_ext : rd2;    
+    assign id_src2_o =  (immsel  == `IMM_ENABLE) ? imm_ext :
+        (fwrd1 == 2'b01) ? exe2id_wd :
+        (fwrd1 == 2'b10) ? mem2id_wd : rd2;    
+    assign id_din_o = (fwrd1 == 2'b01) ? exe2id_wd :
+        (fwrd1 == 2'b10) ? mem2id_wd : rd2;
     // Mux2 immselmux(immsel,imm_ext,rd2,id_src2_o);                 
 
 endmodule

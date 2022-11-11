@@ -1,0 +1,4 @@
+Running: xsim.dir/MiniMIPS32_SYS_tb_behav/xsimk.exe -simmode gui -wdb MiniMIPS32_SYS_tb_behav.wdb -simrunnum 0 -socket 5212
+Design successfully loaded
+Design Loading Memory Usage: 7144 KB (Peak: 7144 KB)
+Design Loading CPU Usage: 0 ms

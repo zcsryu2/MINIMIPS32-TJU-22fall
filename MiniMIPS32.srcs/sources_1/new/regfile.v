@@ -67,9 +67,11 @@ module regfile(
 	//读端口1的读操作 
 	// ra1是读地址、wa是写地址、we是写使能、wd是要写入的数据 
 	always @(*) begin
-		 if (ra1 == `REG_NOP)
+		if (ra1 == `REG_NOP)
 			rd1 <= `ZERO_WORD;
 		// else if (re1 == `READ_ENABLE)
+		else if ((we == `WRITE_ENABLE) && (wa == ra1))
+			rd1 <= wd;
 		else
 			rd1 <= regs[ra1];
 		// else
@@ -82,6 +84,8 @@ module regfile(
 		if (ra2 == `REG_NOP)
 			rd2 <= `ZERO_WORD;
 		// else if (re2 == `READ_ENABLE)
+		else if ((we == `WRITE_ENABLE) && (wa == ra2))
+			rd1 <= wd;
 		else
 			rd2 <= regs[ra2];
 		// else
