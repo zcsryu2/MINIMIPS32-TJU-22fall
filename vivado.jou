@@ -14,3 +14,4 @@ open_project D:/projects/vivado/MiniMIPS32/MiniMIPS32.xpr
 update_compile_order -fileset sources_1
 launch_simulation
 source MiniMIPS32_SYS_tb.tcl
+close_sim

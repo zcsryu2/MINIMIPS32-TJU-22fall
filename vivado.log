@@ -169,3 +169,8 @@ xsim: Time (s): cpu = 00:00:14 ; elapsed = 00:00:06 . Memory (MB): peak = 952.56
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'MiniMIPS32_SYS_tb_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1ms
 launch_simulation: Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 952.562 ; gain = 29.305
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 952.562 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Nov 11 23:39:12 2022...

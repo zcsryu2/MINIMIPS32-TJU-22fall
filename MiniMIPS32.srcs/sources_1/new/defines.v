@@ -25,6 +25,11 @@
 `define MREG_ENABLE     1'b1                // 写回阶段存储器结果选择信号
 `define BSEL_BUS        3 : 0               // 数据存储器字节选择信号宽度
 `define PC_INIT         32'hBFC00000        // PC初始值
+`define JUMP_BUS        25 : 0              //J型指令instr_index字段的宽度
+`define JTSEL_BUS       1 : 0    
+`define STALL_BUS       3 : 0               // 暂停信号宽度
+`define STOP            1'b1                // 流水线暂停
+`define NOSTOP          1'b0                // 流水线不暂停
 
 /*------------------- 指令字参数 -------------------*/
 `define INST_ADDR_BUS   31: 0               // 指令的地址宽度
@@ -36,6 +41,7 @@
 `define LOGIC           3'b010
 `define MOVE            3'b011
 `define SHIFT           3'b100
+`define JUMP            3'b101
 
 // 内部操作码aluop
 `define MINIMIPS32_LUI             8'h05
@@ -68,6 +74,12 @@
 `define MINIMIPS32_SRAV            8'h2B
 `define MINIMIPS32_SRL             8'h2C
 `define MINIMIPS32_SRLV            8'h2D 
+`define MINIMIPS32_J               8'h30
+`define MINIMIPS32_JR              8'h31
+`define MINIMIPS32_JAL             8'h32
+`define MINIMIPS32_BEQ             8'h34
+`define MINIMIPS32_BNE             8'h38
+`define MINIMIPS32_DIV             8'h50
 `define MINIMIPS32_LB              8'h90
 `define MINIMIPS32_LBU             8'h91
 `define MINIMIPS32_LW              8'h92
@@ -82,3 +94,13 @@
 `define REG_ADDR_BUS    4 : 0               // 寄存器的地址宽度
 `define REG_NUM         32                  // 寄存器数量32个
 `define REG_NOP         5'b00000            // 零号寄存器
+
+/*------------------- 除法指令参数 -------------------*/
+`define DIV_FREE                2'b00       //除法准备状态
+`define DIV_BY_ZERO             2'b01       //判断是否除0
+`define DIV_ON                  2'b10       //除法开始状态
+`define DIV_END                 2'b11       //除法结束状态
+`define DIV_READY               1'b1        //除法运算结束信号
+`define DIV_NOT_READY           1'b0        //除法运算未结束信号
+`define DIV_START               1'b1        //除法开始信号
+`define DIV_STOP                1'b0   

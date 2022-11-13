@@ -13,9 +13,10 @@ module exemem_reg (
     input  wire [`DOUBLE_REG_BUS] exe_hilo,
     input  wire                 exe_mreg,
     input  wire [`REG_BUS     ] exe_din,
-    input  wire                     exe_whi,
-    input  wire                     exe_wlo,
-    input  wire                     exe_sext,
+    input  wire                 exe_whi,
+    input  wire                 exe_wlo,
+    input  wire                 exe_sext,
+    input  wire [`STALL_BUS   ] stall,
     // 送到访存阶段的信息 
     output reg  [`ALUOP_BUS   ] mem_aluop,
     output reg  [`REG_ADDR_BUS] mem_wa,
@@ -44,7 +45,20 @@ module exemem_reg (
         mem_wlo                <= `FALSE_V;
         mem_sext               <= 1'b0;
     end
-    else begin
+    else if(stall[3] == `STOP) begin
+        mem_aluop              <= `MINIMIPS32_SLL;
+        mem_wa 				   <= `REG_NOP;
+        mem_wreg   			   <= `WRITE_DISABLE;
+        mem_wd   			   <= `ZERO_WORD;
+        mem_whilo              <= `WRITE_DISABLE;
+        mem_hilo               <= `ZERO_WORD;
+        mem_mreg               <= `WRITE_DISABLE;
+        mem_din                <= `ZERO_WORD;
+        mem_whi                <= `FALSE_V;
+        mem_wlo                <= `FALSE_V;
+        mem_sext               <= 1'b0;
+    end
+    else if(stall[3] == `NOSTOP) begin
         mem_aluop              <= exe_aluop;
         mem_wa 				   <= exe_wa;
         mem_wreg 			   <= exe_wreg;
