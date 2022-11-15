@@ -2,8 +2,8 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Sun Nov 13 15:48:15 2022
-# Process ID: 30436
+# Start of session at: Sun Nov 13 21:53:54 2022
+# Process ID: 19068
 # Current directory: D:/projects/vivado/MiniMIPS32/MiniMIPS32.runs/inst_rom_synth_1
 # Command line: vivado.exe -log inst_rom.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source inst_rom.tcl
 # Log file: D:/projects/vivado/MiniMIPS32/MiniMIPS32.runs/inst_rom_synth_1/inst_rom.vds

@@ -68,7 +68,7 @@ module idexe_reg (
             exe_sext           <= 1'b0;
             exe_ret_addr       <= `ZERO_WORD;
         end
-        else begin
+        else if(stall[2] == `NOSTOP)begin
             exe_alutype 	   <= id_alutype;
             exe_aluop 		   <= id_aluop;
             exe_src1 		   <= id_src1;

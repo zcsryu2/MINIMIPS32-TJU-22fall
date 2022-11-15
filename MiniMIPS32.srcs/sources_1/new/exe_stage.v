@@ -118,7 +118,7 @@ module exe_stage (
     wire [`REG_BUS] div_opdata1;
     wire [`REG_BUS] div_opdata2;
     wire div_start;
-    reg div_ready;
+    reg div_ready = `DIV_NOT_READY;
 
     assign stallreq_exe = ((exe_aluop_i == `MINIMIPS32_DIV) && (div_ready == `DIV_NOT_READY)) ? `STOP : `NOSTOP;
     assign div_opdata1 = (exe_aluop_i == `MINIMIPS32_DIV) ? exe_src1_i : `ZERO_WORD;
@@ -137,7 +137,7 @@ module exe_stage (
     reg [5:0] cnt;
 
     reg [65:0] dividend;
-    reg [1:0] state;
+    reg [1:0] state = `DIV_FREE;
     reg [33:0] divisor;
     reg [31:0] temp_op1;
     reg [31:0] temp_op2;
@@ -152,6 +152,10 @@ module exe_stage (
     assign div_temp1 = {1'b0, dividend[63:32]} - {1'b0, divisor}; // 部分余数与被除数的1倍相减
     assign div_temp2 = {1'b0, dividend[63:32]} - {1'b0, divisor2}; // 部分余数与被除数的2倍相减
     assign div_temp3 = {1'b0, dividend[63:32]} - {1'b0, divisor3}; // 部分余数与被除数的3倍相减
+
+    assign divisor_temp = temp_op2;
+    assign divisor2     = divisor_temp << 1;       //除数的两倍
+	assign divisor3     = divisor2 + divisor;      //除数的三倍
 
     assign div_temp = (div_temp3[34] == 1'b0) ? div_temp3 : 
         (div_temp2[34] == 1'b0) ? div_temp2 : div_temp1;

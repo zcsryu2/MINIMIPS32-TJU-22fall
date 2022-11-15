@@ -201,8 +201,7 @@ module id_stage(
     assign id_sext_o = sext;   
     // 获得待写入目的寄存器的地址（rt或rd）
     assign id_wa_o      = (rtsel == `RT_ENABLE)?rt : (jal == `TRUE_V) ? 5'b11111 : rd;                             
-    // 获得待写入目的寄存器的地址（rt或rd）
-    assign id_wa_o      = (rtsel == `RT_ENABLE)?rt : rd;
+
     //只写hi寄存器和lo寄存器的使能
     assign id_whi_o =  inst_mthi;
     assign id_wlo_o =  inst_mtlo;
@@ -220,8 +219,8 @@ module id_stage(
     // assign id_din_o     =rd2;
     // 获得源操作数1。如果shift信号有效，则源操作数1为移位位数；否则为从读通用寄存器堆端口1获得的数据
     assign id_src1_o = (shift  == `SHIFT_ENABLE   ) ? {27'b0,sa} :
-        (fwrd2 == 2'b01) ? exe2id_wd :
-        (fwrd2 == 2'b10) ? mem2id_wd : rd1;
+        (fwrd1 == 2'b01) ? exe2id_wd :
+        (fwrd1 == 2'b10) ? mem2id_wd : rd1;
     // Mux2 shiftmux(shift,rd1,{27'b0,sa},id_src1_o);
     // 获得源操作数2。如果immsel信号有效，则源操作数1为立即数；否则为从读通用寄存器堆端口2获得的数据
     wire [31:0] imm_ext = (upper == `UPPER_ENABLE)? (imm << 16):(sext==`SIGNED_EXT)?{{16{imm[15]}},imm}:{{16{1'b0}},imm};
@@ -245,8 +244,10 @@ module id_stage(
     // 生成子程序调用的返回地址 
     assign ret_addr = pc_plus_8;
 
-    assign stallreq_id = (((exe2id_wreg == `WRITE_ENABLE && exe2id_wa == ra1) || (exe2id_wreg == `WRITE_ENABLE && exe2id_wa == ra2)) && (exe2id_mreg == `TRUE_V)) ? `STOP :
-        (((mem2id_wreg == `WRITE_ENABLE && mem2id_wa == ra1) || (mem2id_wreg == `WRITE_ENABLE && mem2id_wa == ra2)) && (mem2id_mreg == `TRUE_V)) ? `STOP :
-        `NOSTOP;
+    assign stallreq_id = (((exe2id_wreg == `WRITE_ENABLE && exe2id_wa == ra1) || (exe2id_wreg == `WRITE_ENABLE && exe2id_wa == ra2))&&
+                         (exe2id_mreg == `TRUE_V)) ? `STOP :
+                         (((mem2id_wreg == `WRITE_ENABLE && mem2id_wa == ra1) || (mem2id_wreg == `WRITE_ENABLE && mem2id_wa == ra2))&& 
+                         (mem2id_mreg == `TRUE_V)) ? `STOP :`NOSTOP;
+                         
 
 endmodule

@@ -79,7 +79,7 @@
 `define MINIMIPS32_JAL             8'h32
 `define MINIMIPS32_BEQ             8'h34
 `define MINIMIPS32_BNE             8'h38
-`define MINIMIPS32_DIV             8'h50
+`define MINIMIPS32_DIV             8'h16
 `define MINIMIPS32_LB              8'h90
 `define MINIMIPS32_LBU             8'h91
 `define MINIMIPS32_LW              8'h92
